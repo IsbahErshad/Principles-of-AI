@@ -1,0 +1,57 @@
+replace string :
+a = "Hello, World!"
+print(a.replace("H", "J"))
+
+split string:
+a = "Hello, World!"
+b = a.split(",")
+print(b)
+
+delete from list:
+thislist = ["apple", "banana", "cherry"]
+del thislist[0]
+print(thislist)
+
+replace item in a list:
+thislist = ["apple", "banana", "cherry"]
+thislist[1] = "blackcurrant"
+print(thislist)
+
+tuple:
+thistuple = ("apple", "banana", "cherry")
+if "apple" in thistuple:
+  print("Yes, 'apple' is in the fruits tuple")
+
+dictionary:
+thisdict =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict["year"] = 2018
+print(thisdict)
+
+using key:
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+if "model" in thisdict:
+  print("Yes, 'model' is one of the keys in the thisdict dictionary")
+
+objects:
+class Person:
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+
+  def myfunc(self):
+    print("Hello my name is " + self.name)
+
+p1 = Person("John", 36)
+p1.age = 40
+print(p1.age)
+
+
+
