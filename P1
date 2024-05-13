@@ -17,29 +17,6 @@ thislist = ["apple", "banana", "cherry"]
 thislist[1] = "blackcurrant"
 print(thislist)
 
-tuple:
-thistuple = ("apple", "banana", "cherry")
-if "apple" in thistuple:
-  print("Yes, 'apple' is in the fruits tuple")
-
-dictionary:
-thisdict =	{
-  "brand": "Ford",
-  "model": "Mustang",
-  "year": 1964
-}
-thisdict["year"] = 2018
-print(thisdict)
-
-using key:
-thisdict = {
-  "brand": "Ford",
-  "model": "Mustang",
-  "year": 1964
-}
-if "model" in thisdict:
-  print("Yes, 'model' is one of the keys in the thisdict dictionary")
-
 objects:
 class Person:
   def __init__(self, name, age):
