@@ -40,8 +40,6 @@ node4.next = node5
 
 print("Before deletion:")
 traverseAndPrint(node1)
-
-# Delete node4
 node1 = deleteSpecificNode(node1, node4)
 
 print("\nAfter deletion:")
