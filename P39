@@ -1,0 +1,10 @@
+swaping 3 no:
+def swap_numbers(a, b, c):
+    a, b, c = c, a, b
+    return a, b, c
+
+x, y, z = 1, 2, 3
+print("Before swapping:", x, y, z)
+
+x, y, z = swap_numbers(x, y, z)
+print("After swapping:", x, y, z)
