@@ -1,0 +1,8 @@
+palindrome:
+def is_palindrome(number):
+    s = str(number)
+    return s == s[::-1]
+
+print(is_palindrome(121))   
+print(is_palindrome(12321))
+print(is_palindrome(123))   
