@@ -1,0 +1,11 @@
+fuzzy set intersection:
+def fuzzy_intersection(set1, set2):
+    result = {}
+    for key in set1:
+        if key in set2:
+            result[key] = min(set1[key], set2[key])
+    return result
+
+set1 = {'a': 0.8, 'b': 0.5, 'c': 0.3}
+set2 = {'a': 0.7, 'b': 0.6, 'd': 0.4}
+print("Intersection:", fuzzy_intersection(set1, set2))
