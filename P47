@@ -1,0 +1,19 @@
+area of geometrical shapes:
+import math
+
+def area_square(side):
+    return side * side
+
+def area_rectangle(length, width):
+    return length * width
+
+def area_circle(radius):
+    return math.pi * radius * radius
+
+def area_triangle(base, height):
+    return 0.5 * base * height
+
+print("Area of square:", area_square(4))     
+print("Area of rectangle:", area_rectangle(5, 3))  
+print("Area of circle:", area_circle(3))      
+print("Area of triangle:", area_triangle(6, 4))   
