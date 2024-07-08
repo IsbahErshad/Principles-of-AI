@@ -1,0 +1,43 @@
+Chatbot admission inquiry:
+class AdmissionChatbot:
+    def __init__(self):
+        self.responses = {
+            "hello": "Hello! How can I help you with your admission inquiry?",
+            "admission requirements": "You can find admission requirements on our website.",
+            "application process": "The application process involves submitting an online form and relevant documents.",
+            "contact": "You can contact us at admissions@example.com for further assistance.",
+            "deadline": "The application deadline is [deadline date].",
+            "tuition fees": "Tuition fees vary depending on the program. Please check our website for details.",
+            "scholarships": "We offer various scholarships based on academic merit and financial need.",
+            "campus tour": "You can schedule a campus tour by contacting our admissions office.",
+            "housing options": "Information about housing options can be found on our website.",
+            "programs": "We offer a wide range of programs. Which specific program are you interested in?",
+            "bye": "Goodbye! Have a great day!",
+            "default": "I'm sorry, I don't understand. Could you please rephrase?"
+        }
+
+    def respond(self, message):
+        message = message.lower()
+        if message in self.responses:
+            return self.responses[message]
+        elif "thank you" in message:
+            return "You're welcome!"
+        elif "programs" in message:
+            return self.responses["programs"]
+        else:
+            return self.responses["default"]
+
+# Example usage:
+chatbot = AdmissionChatbot()
+print(chatbot.respond("Hello"))
+print(chatbot.respond("Admission requirements"))
+print(chatbot.respond("What is the application process?"))
+print(chatbot.respond("How do I contact you?"))
+print(chatbot.respond("What is the application deadline?"))
+print(chatbot.respond("What are the tuition fees?"))
+print(chatbot.respond("Do you offer scholarships?"))
+print(chatbot.respond("Can I schedule a campus tour?"))
+print(chatbot.respond("Tell me about housing options."))
+print(chatbot.respond("I'm interested in your programs."))
+print(chatbot.respond("Thank you for your help!"))
+print(chatbot.respond("What sports facilities do you have?"))
