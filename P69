@@ -1,0 +1,9 @@
+complement of a fuzzy set:
+def fuzzy_complement(set1):
+    result = {}
+    for key in set1:
+        result[key] = 1 - set1[key]
+    return result
+
+set1 = {'a': 0.8, 'b': 0.5, 'c': 0.3}
+print("Complement:", fuzzy_complement(set1))
