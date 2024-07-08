@@ -1,0 +1,45 @@
+NIMGAME:
+import random
+
+class NimGame:
+    def __init__(self):
+        self.piles = [3, 4, 5]  # Initial piles
+        self.current_player = 1  # Player 1 starts
+
+    def print_piles(self):
+        print(f"Pile A: {self.piles[0]}  Pile B: {self.piles[1]}  Pile C: {self.piles[2]}")
+
+    def is_game_over(self):
+        return all(pile == 0 for pile in self.piles)
+
+    def make_move(self, pile, stones):
+        if self.piles[pile] >= stones:
+            self.piles[pile] -= stones
+            self.current_player = 2 if self.current_player == 1 else 1
+            return True
+        return False
+
+    def ai_move(self):
+        pile = random.randint(0, 2)
+        stones = random.randint(1, self.piles[pile])
+        self.make_move(pile, stones)
+
+# Example usage:
+game = NimGame()
+
+while not game.is_game_over():
+    game.print_piles()
+    if game.current_player == 1:
+        pile = int(input("Player 1, select a pile (0-2): "))
+        stones = int(input(f"How many stones to remove from pile {pile}? "))
+        while not game.make_move(pile, stones):
+            print("Invalid move! Try again.\n")
+            game.print_piles()
+            pile = int(input("Player 1, select a pile (0-2): "))
+            stones = int(input(f"How many stones to remove from pile {pile}? "))
+    else:
+        print("AI's turn...")
+        game.ai_move()
+
+game.print_piles()
+print(f"Player {game.current_player} wins!")
