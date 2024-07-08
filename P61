@@ -1,0 +1,49 @@
+tic tac toe:
+class TicTacToe:
+    def __init__(self):
+        self.board = [' ']*9  # Empty board
+        self.current_player = 'X'
+
+    def print_board(self):
+        print(f"{self.board[0]} | {self.board[1]} | {self.board[2]}")
+        print("--+---+--")
+        print(f"{self.board[3]} | {self.board[4]} | {self.board[5]}")
+        print("--+---+--")
+        print(f"{self.board[6]} | {self.board[7]} | {self.board[8]}")
+
+    def check_win(self):
+        win_conditions = [(0, 1, 2), (3, 4, 5), (6, 7, 8),  # rows
+                          (0, 3, 6), (1, 4, 7), (2, 5, 8),  # columns
+                          (0, 4, 8), (2, 4, 6)]  # diagonals
+        for condition in win_conditions:
+            if self.board[condition[0]] == self.board[condition[1]] == self.board[condition[2]] != ' ':
+                return True
+        return False
+
+    def check_draw(self):
+        return ' ' not in self.board
+
+    def make_move(self, position):
+        if self.board[position] == ' ':
+            self.board[position] = self.current_player
+            self.current_player = 'O' if self.current_player == 'X' else 'X'
+            return True
+        return False
+
+# Example usage:
+game = TicTacToe()
+
+while not game.check_win() and not game.check_draw():
+    game.print_board()
+    move = int(input(f"Player {game.current_player}, enter your move (0-8): "))
+    if game.make_move(move):
+        print("\n")
+    else:
+        print("Invalid move! Try again.\n")
+
+game.print_board()
+
+if game.check_win():
+    print(f"Player {game.current_player} wins!")
+else:
+    print("It's a draw!")
