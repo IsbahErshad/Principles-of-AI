@@ -1,0 +1,15 @@
+union of two fuzzy sets:
+def fuzzy_union(set1, set2):
+    result = {}
+    for key in set1:
+        result[key] = set1[key]
+    for key in set2:
+        if key in result:
+            result[key] = max(result[key], set2[key])
+        else:
+            result[key] = set2[key]
+    return result
+
+set1 = {'a': 0.8, 'b': 0.5, 'c': 0.3}
+set2 = {'a': 0.7, 'b': 0.6, 'd': 0.4}
+print("Union:", fuzzy_union(set1, set2))
