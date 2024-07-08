@@ -1,0 +1,12 @@
+repetation in string:
+def find_repetitions(s):
+    repetitions = {}
+    for char in s:
+        if char in repetitions:
+            repetitions[char] += 1
+        else:
+            repetitions[char] = 1
+    return {k: v for k, v in repetitions.items() if v > 1}
+
+input_string = "Hello, World!"
+print(find_repetitions(input_string))
